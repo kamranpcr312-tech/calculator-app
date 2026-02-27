@@ -1,1 +1,95 @@
-<!DOCTYPE html>\n<html lang='en'>\n<head>\n    <meta charset='UTF-8'>\n    <meta name='viewport' content='width=device-width, initial-scale=1.0'>\n    <title>Advanced Calculator</title>\n    <link rel='stylesheet' href='styles.css'>\n</head>\n<body>\n    <div class='calculator'>\n        <div class='display' id='display'>0</div>\n        <div class='buttons'>\n            <!-- 3D styled buttons -->\n            <button class='btn' onclick='clearDisplay()'>C</button>\n            <button class='btn' onclick='appendToDisplay("7")'>7</button>\n            <button class='btn' onclick='appendToDisplay("8")'>8</button>\n            <button class='btn' onclick='appendToDisplay("9")'>9</button>\n            <button class='btn' onclick='appendToDisplay("/")'>/</button>\n            <button class='btn' onclick='appendToDisplay("4")'>4</button>\n            <button class='btn' onclick='appendToDisplay("5")'>5</button>\n            <button class='btn' onclick='appendToDisplay("6")'>6</button>\n            <button class='btn' onclick='appendToDisplay("*")'>*</button>\n            <button class='btn' onclick='appendToDisplay("1")'>1</button>\n            <button class='btn' onclick='appendToDisplay("2")'>2</button>\n            <button class='btn' onclick='appendToDisplay("3")'>3</button>\n            <button class='btn' onclick='appendToDisplay("-")'>-</button>\n            <button class='btn' onclick='appendToDisplay("0")'>0</button>\n            <button class='btn' onclick='appendToDisplay(".")'>.</button>\n            <button class='btn' onclick='calculateResult()'>=</button>\n            <button class='btn' onclick='appendToDisplay("+")'>+</button>\n        </div>\n        <div class='memory-functions'>\n            <button class='btn' onclick='saveToMemory()'>M+</button>\n            <button class='btn' onclick='clearMemory()'>MC</button>\n            <button class='btn' onclick='recallMemory()'>MR</button>\n            <button class='btn' onclick='clearHistory()'>History</button>\n        </div>\n        <div class='shape-area-calculator'>\n            <h3>Shape Area Calculator</h3>\n            <form id='shape-form'>\n                <select id='shape-select' onchange='calculateArea()'>\n                    <option value='rectangle'>Rectangle</option>\n                    <option value='circle'>Circle</option>\n                    <!-- Add more shapes as needed -->\n                </select>\n                <input type='number' id='shape-dimension1' placeholder='Dimension 1'>\n                <input type='number' id='shape-dimension2' placeholder='Dimension 2 (if applicable)'>\n                <button type='button' onclick='calculateArea()'>Calculate Area</button>\n            </form>\n            <div id='area-result'></div>\n        </div>\n        <div class='number-to-words'>\n            <h3>Number to Words Converter</h3>\n            <input type='number' id='number-input' placeholder='Enter a number'>\n            <button type='button' onclick='convertToWords()'>Convert</button>\n            <div id='words-result'></div>\n        </div>\n        <div class='equation-solver'>\n            <h3>Equation Solver</h3>\n            <input type='text' id='equation-input' placeholder='Enter equation'>\n            <button type='button' onclick='solveEquation()'>Solve</button>\n            <div id='equation-result'></div>\n        </div>\n    </div>\n    <script src='script.js'></script>\n</body>\n</html>\n
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Calculator PCR</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Advanced Calculator PCR</h1>
+        <div class="theme-selector">
+            <button class="theme-button" id="dark-blue">Dark Blue</button>
+            <button class="theme-button" id="dark-red">Dark Red</button>
+            <button class="theme-button" id="neon-green">Neon Green</button>
+            <button class="theme-button" id="ocean">Ocean</button>
+            <button class="theme-button" id="sunset">Sunset</button>
+        </div>
+        <div id="calculator">
+            <input type="text" id="display" disabled />
+            <div class="buttons">
+                <button class="big-button">7</button>
+                <button class="big-button">8</button>
+                <button class="big-button">9</button>
+                <button class="big-button">/</button>
+                <button class="big-button">√x</button>
+                <button class="big-button">4</button>
+                <button class="big-button">5</button>
+                <button class="big-button">6</button>
+                <button class="big-button">*</button>
+                <button class="big-button">x²</button>
+                <button class="big-button">1</button>
+                <button class="big-button">2</button>
+                <button class="big-button">3</button>
+                <button class="big-button">-</button>
+                <button class="big-button">π</button>
+                <button class="big-button">0</button>
+                <button class="big-button">.</button>
+                <button class="big-button">+</button>
+                <button class="big-button">%</button>
+                <button class="big-button">+/-</button>
+                <button class="big-button">MC</button>
+                <button class="big-button">M+</button>
+                <button class="big-button">M-</button>
+                <button class="big-button">MR</button>
+            </div>
+            <div class="area-calculator">
+                <h2>Area Calculator</h2>
+                <select id="shape">
+                    <option value="circle">Circle</option>
+                    <option value="rectangle">Rectangle</option>
+                    <option value="triangle">Triangle</option>
+                    <option value="square">Square</option>
+                    <option value="pentagon">Pentagon</option>
+                    <option value="hexagon">Hexagon</option>
+                    <option value="ellipse">Ellipse</option>
+                    <option value="trapezoid">Trapezoid</option>
+                </select>
+                <input type="text" id="shape-input" placeholder="Dimensions" />
+                <button id="calculate-area">Calculate Area</button>
+                <div id="area-result"></div>
+            </div>
+            <div class="converter">
+                <h2>Number to Words Converter</h2>
+                <input type="text" id="number-input" placeholder="Enter number" />
+                <button id="convert-number">Convert</button>
+                <div id="conversion-result"></div>
+            </div>
+            <div class="history-management">
+                <h2>History</h2>
+                <button id="export-history">Export</button>
+                <button id="print-history">Print</button>
+                <button id="copy-history">Copy</button>
+                <div id="history-result"></div>
+            </div>
+            <div class="math-equation-solver">
+                <h2>Math Equation Solver</h2>
+                <input type="text" id="math-input" placeholder="Enter equation" />
+                <button id="solve-math">Solve</button>
+                <div id="math-solution"></div>
+            </div>
+            <div class="todo-list">
+                <h2>Advanced To-Do List</h2>
+                <input type="text" id="todo-input" placeholder="Add a task" />
+                <button id="add-todo">Add</button>
+                <ul id="todo-list"></ul>
+                <input type="date" id="calendar-date" />
+                <input type="file" id="image-upload" />
+                <input type="file" id="audio-upload" />
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
