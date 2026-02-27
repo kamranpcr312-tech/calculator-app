@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="calculator">
+        <input type="text" id="display" disabled />
+        <div class="buttons">
+            <!-- Buttons for numbers and operations here -->
+            <button onclick="appendNumber('1')">1</button>
+            <button onclick="appendNumber('2')">2</button>
+            <button onclick="appendNumber('3')">3</button>
+            <button onclick="calculate('+')">+</button>
+            <!-- More buttons as needed -->
+        </div>
+        <button onclick="clearDisplay()">C</button>
+        <button onclick="calculateResult()">=</button>
+        <button onclick="memoryStore()">M+</button>
+        <button onclick="memoryRetrieve()">MR</button>
+        <button onclick="exportHistory()">Export</button>
+        <button onclick="convertNumberToWords()">Convert to Words</button>
+        <button onclick="calculateArea()">Area</button>
+    </div>
+    <div class="theme-switcher">
+        <label for="theme">Choose Theme:</label>
+        <select id="theme" onchange="switchTheme()">
+            <option value="light">Light</option>
+            <option value="dark">Dark</option>
+            <option value="solar">Solar</option>
+            <option value="ocean">Ocean</option>
+            <option value="forest">Forest</option>
+        </select>
+    </div>
+</body>
+</html>
