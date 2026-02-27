@@ -1,0 +1,68 @@
+.button {
+    border: none;
+    border-radius: 5px;
+    padding: 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+/* Neon Glow Effects */
+.button:focus, .button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .button {
+        font-size: 14px;
+        padding: 12px;
+    }
+}
+
+/* Comprehensive Themes */
+/* Dark Blue */
+.theme-dark-blue {
+    background-color: #001f3f;
+    color: white;
+}
+
+/* Dark Red */
+.theme-dark-red {
+    background-color: #C0392B;
+    color: white;
+}
+
+/* Neon Green */
+.theme-neon-green {
+    background-color: #2ECC40;
+    color: black;
+}
+
+/* Ocean */
+.theme-ocean {
+    background-color: #007BFF;
+    color: white;
+}
+
+/* Sunset */
+.theme-sunset {
+    background-color: #F39C12;
+    color: white;
+}
+
+/* Professional Layout */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+}
+
+/* Add other necessary styles to maintain professionalism */
